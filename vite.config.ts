@@ -5,7 +5,7 @@ import vuetify from 'vite-plugin-vuetify';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/test-pages/',
+  base: './',
   server: {
     port: 4575
   },
