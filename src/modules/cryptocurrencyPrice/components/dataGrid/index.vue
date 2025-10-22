@@ -43,7 +43,7 @@
 <script lang="ts" setup>
   import {ref} from 'vue';
   import {useHeaders} from '../../composables/tableHeader';
-  import GlobalRepository from '@remote/global/Repository/index';
+  import CryptoCurrencyPriceRepository from '../../api/Repository/index';
   import {filterAmount, filterDateToOptionalFormat} from '@app/utils';
 
   const {headers} = useHeaders();
@@ -64,7 +64,7 @@
   ]);
 
   async function queryService(params: {page: number; pageSize: number}) {
-    return GlobalRepository.getCurrency(params);
+    return CryptoCurrencyPriceRepository.getCurrency(params);
   }
 </script>
 <style lang="scss" scoped></style>

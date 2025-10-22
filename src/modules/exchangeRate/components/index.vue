@@ -25,10 +25,10 @@
 </template>
 <script lang="ts" setup>
   import {onMounted, ref} from 'vue';
-  import {currencyNamesFa} from '../helpers/currencyNamesFa';
-  import GlobalRepository from '@remote/global/Repository/index';
-  import type {CurrencyCode, IExchangeRatesResponse} from '../types';
   import {useLoading} from '@app/composables/loading';
+  import {currencyNamesFa} from '../helpers/currencyNamesFa';
+  import ExchangeRateRepository from '../api/Repository/index';
+  import type {CurrencyCode, IExchangeRatesResponse} from '../types';
 
   const loading = useLoading();
 
@@ -43,7 +43,7 @@
   async function getExchangerate(currency: string) {
     loading.setLoading(true);
 
-    items.value = await GlobalRepository.getExchangerate(currency);
+    items.value = await ExchangeRateRepository.getExchangerate(currency);
 
     loading.setLoading(false);
   }

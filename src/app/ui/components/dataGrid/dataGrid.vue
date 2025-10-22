@@ -324,13 +324,9 @@
       ? props.queryService(params.value)
       : props.service.$query(params.value);
 
-    service.then((data: {data: []; totalPages: number}) => {
-      items.value = props.withQuerySearch
-        ? filteredItemsClient(data.data)
-        : data.data;
-      pagination.value.totalPages = props.withServerPagination
-        ? data.totalPages
-        : totalPagesClient.value;
+    service.then((data: never[]) => {
+      items.value = props.withQuerySearch ? filteredItemsClient(data) : data;
+      pagination.value.totalPages = totalPagesClient.value;
       loading.value = false;
     });
   }

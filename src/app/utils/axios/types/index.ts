@@ -8,7 +8,7 @@ import type {
 export interface IData {
   validationError: boolean;
   message: string;
-  data: object | boolean | object;
+  data: object | boolean | object[];
 }
 export interface IRequestResponse<T = any, D = any> {
   data: T | IData;

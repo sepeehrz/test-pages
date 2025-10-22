@@ -5,7 +5,6 @@ export function useVuetifyTheme() {
   const theme = useTheme();
   const currentMode = ref<'light' | 'dark' | 'system'>('system');
 
-  // Initialize theme mode from localStorage
   const initializeThemeMode = () => {
     const savedTheme = localStorage.getItem('theme-mode') as
       | 'light'
@@ -87,14 +86,10 @@ export function useVuetifyTheme() {
   };
 
   return {
-    // Vuetify theme instance
     theme,
-    // Current mode (light/dark/system)
     currentMode,
-    // Computed values
     isDark,
     isLight,
-    // Methods
     toggleTheme,
     setThemeMode,
     getThemeIcon,
