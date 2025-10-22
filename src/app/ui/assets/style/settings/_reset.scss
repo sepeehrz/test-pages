@@ -1,0 +1,34 @@
+:root {
+  --font-family: IRANSansX;
+  -moz-font-feature-settings: 'ss02';
+  -webkit-font-feature-settings: 'ss02';
+  font-feature-settings: 'ss02';
+}
+
+html {
+  font-size: 1rem;
+  font-family: var(--font-family) !important;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-family);
+  -moz-font-feature-settings: 'ss02';
+  -webkit-font-feature-settings: 'ss02';
+  font-feature-settings: 'ss02';
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  height: 100%;
+  overflow: hidden;
+}
